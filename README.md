@@ -99,6 +99,8 @@ CI/CD Logs:
 
 GitHub Actions Tab
 
+https://github.com/RavindranadhTagore/CI-CD-PIPELINE/actions
+
 Deployed App (Demo URL):
 
 http://44.203.114.241:3000
