@@ -16,21 +16,32 @@ This project demonstrates a complete CI/CD pipeline using GitHub Actions, Docker
 
 📁 Project Structure
 
+
 project-root/
+
 ├── app/
+
 │   ├── main.py            # Flask application
+
 │   └── test_main.py       # Unit tests using Pytest
+
 ├── Dockerfile             # Docker build instructions
+
 ├── requirements.txt       # Python dependencies
+
 ├── docker-compose.yml     # Optional: Local Docker run
+
 └── .github/
+
     └── workflows/
+    
         └── ci-cd.yml      # GitHub Actions workflow
-        
+
+
+
 🔄 CI/CD Workflow
 
 Trigger:
-
 
 Runs on every push to the main branch.
 
