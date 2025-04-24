@@ -105,3 +105,8 @@ Deployed App (Demo URL):
 
 http://44.203.114.241:3000
 
+Deployment Screenshot:
+
+![pipeline Screenshot](https://github.com/user-attachments/assets/7b585251-66d6-48b9-a571-e69697048e4f)
+
+
