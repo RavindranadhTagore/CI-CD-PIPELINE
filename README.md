@@ -1,58 +1,94 @@
- Python CI/CD Pipeline with Docker & GitHub Actions (Local Deployment)
+🚀 Python CI/CD Pipeline with Docker & GitHub Actions (Local Deployment)
 
-This project demonstrates a complete CI/CD pipeline using GitHub Actions and Docker to build and deploy a simple static website.
+This project demonstrates a complete CI/CD pipeline using GitHub Actions, Docker, and Minikube to build, test, and deploy a simple Python Flask application.
 
-.
- Tools Used
+🧰 Tools Used
 
-- Python + Flask
-- Docker
-- Docker Hub
-- GitHub Actions
-- Minikube / Local Kubernetes
+🐍 Python + Flask
 
-## 📁 Project Structure
-project-root/ 
-├── app/ │ 
-     ├── main.py # Flask app |
-     └── test_main.py # Pytest test file 
-├── Dockerfile # Docker build 
-├── requirements.txt # Python dependencies 
-├── docker-compose.yml # Optional local Docker run 
-└── .github/workflows/ 
-                 └── ci-cd.yml # GitHub Actions workflow
+🐳 Docker
+
+📦 Docker Hub
+
+⚙️ GitHub Actions
+
+☸️ Minikube / Local Kubernetes
+
+📁 Project Structure
+
+project-root/
+├── app/
+│   ├── main.py            # Flask application
+│   └── test_main.py       # Unit tests using Pytest
+├── Dockerfile             # Docker build instructions
+├── requirements.txt       # Python dependencies
+├── docker-compose.yml     # Optional: Local Docker run
+└── .github/
+    └── workflows/
+        └── ci-cd.yml      # GitHub Actions workflow
+        
+🔄 CI/CD Workflow
+
+Trigger:
 
 
-## ⚙️ CI/CD Workflow
+Runs on every push to the main branch.
 
-### Trigger:  
-On every push to the `main` branch
+Workflow Actions:
 
-### Actions Performed:
-1. Checkout code
-2. Run unit tests with `pytest`
-3. Build Docker image
-4. Push image to Docker Hub: [`ravindranadratagore/cicd`](httpshttps://hub.docker.com/repository/docker/ravindranadhtagore/ci-cd)
+✅ Checkout the source code
 
-GitHub Secrets required:
-- `DOCKER_USERNAME`
-- `DOCKER_PASSWORD` (or Docker Access Token)
+🧪 Run unit tests using pytest
 
-Build & Run Locally
+🛠️ Build the Docker image
 
-Deploy on Minikube
-minikube start  --dirver=
-kubectl create deployment myapp  --image=ravindranadhtagore/ci-cd:latest
-kubectl expose deployment myapp --type=NodePort --port=5000
-minikube service myapp
+📤 Push the image to Docker Hub
+
+Repository: ravindranadratagore/cicd
+
+🔐 GitHub Secrets Required
+
+Name	Description
+
+DOCKER_USERNAME	Docker Hub username
+
+DOCKER_PASSWORD	Docker Hub password or token
+
+🧪 Build & Run Locally
+
+Using Docker Compose (optional):
+
+docker-compose up --build
+
+Run Docker manually:
+
 docker run -d -p 3000:5000 ravindranadhtagore/ci-cd:latest
-Deliverables
-GitHub Repository: https://github.com/RavindranadhTagore/CI-CD-PIPELINE.git
 
-Docker Image: https://hub.docker.com/repository/docker/ravindranadhtagore/ci-cd
+☸️ Deploy on Minikube
 
-CI/CD Logs: See GitHub Actions tab (https://github.com/RavindranadhTagore/CI-CD-PIPELINE/actions)
-http:// 44.203.114.241:3000
-Deployment Screenshot: screenshot.png 
- 
+minikube start --driver=docker
+
+kubectl create deployment myapp --image=ravindranadhtagore/ci-cd:latest
+
+kubectl expose deployment myapp --type=NodePort --port=5000
+
+minikube service myapp
+
+📦 Deliverables
+
+GitHub Repository:
+
+https://github.com/RavindranadhTagore/CI-CD-PIPELINE.git
+
+Docker Image:
+
+https://hub.docker.com/repository/docker/ravindranadhtagore/ci-cd
+
+CI/CD Logs:
+
+GitHub Actions Tab
+
+Deployed App (Demo URL):
+
+http://44.203.114.241:3000
 
